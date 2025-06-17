@@ -54,33 +54,27 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onTaskUpdated, onTaskDeleted 
   }, []);
 
   return (
-    <div className={`${styles.taskItem} ${task.isCompleted ? styles.completed : styles.pending}`} style={{ cursor: "default" }}>
-      <div className={styles.taskHeader} style={{ cursor: "default" }}>
+    <div className={`${styles.taskItem} ${task.isCompleted ? styles.completed : styles.pending} ${styles.defaultCursor}`}>
+      <div className={`${styles.taskHeader} ${styles.defaultCursor}`}>
         <div
-          className={`${styles.taskCheckbox} ${isToggling ? styles.toggling : task.isCompleted ? styles.checked : styles.unchecked}`}
+          className={`${styles.taskCheckbox} ${styles.pointerCursor} ${
+            isToggling ? styles.toggling : task.isCompleted ? styles.checked : styles.unchecked
+          }`}
           onClick={handleToggle}
           role="button"
           tabIndex={0}
           aria-label={task.isCompleted ? "Mark as incomplete" : "Mark as complete"}
-          style={{ cursor: "pointer" }}
         />
 
-        <div className={styles.taskContent} style={{ cursor: "default" }}>
-          <h3
-            className={`${styles.taskTitle} ${task.isCompleted ? styles.completed : styles.pending}`}
-            onClick={handleToggle}
-            role="button"
-            tabIndex={0}
-            style={{ cursor: "pointer" }}
-          >
-            {task.title}
+        <div className={`${styles.taskContent} ${styles.defaultCursor}`}>
+          <h3 className={`${styles.taskTitle} ${task.isCompleted ? styles.completed : styles.pending}`} role="button" tabIndex={0}>
+            <span className={styles.pointerCursor} onClick={handleToggle}>
+              {task.title}
+            </span>
           </h3>
 
           {task.description && (
-            <p
-              className={`${styles.taskDescription} ${task.isCompleted ? styles.completed : styles.pending}`}
-              style={{ cursor: "default" }}
-            >
+            <p className={`${styles.taskDescription} ${styles.defaultCursor} ${task.isCompleted ? styles.completed : styles.pending}`}>
               {task.description}
             </p>
           )}
@@ -109,8 +103,8 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onTaskUpdated, onTaskDeleted 
         confirmButtonType="danger"
         closeOnBackdropClick={!isDeleting}
       >
-        <p style={{ margin: 0, color: "#374151", lineHeight: "1.5" }}>
-          Are you sure you want to delete the task <strong style={{ color: "#1f2937" }}>"{task.title}"</strong>?
+        <p className={styles.modalContent}>
+          Are you sure you want to delete the task <strong className={styles.modalContentHighlight}>"{task.title}"</strong>?
         </p>
       </Modal>
     </div>

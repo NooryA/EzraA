@@ -181,3 +181,23 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* Cursor styles */
+.defaultCursor {
+  cursor: default;
+}
+
+.pointerCursor {
+  cursor: pointer;
+}
+
+/* Modal content styles */
+.modalContent {
+  margin: 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.modalContentHighlight {
+  color: #1f2937;
+}
