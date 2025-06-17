@@ -45,7 +45,13 @@ dotnet restore
 **⚠️ Troubleshooting**: If `dotnet restore` fails with NuGet source errors, try:
 
 ```bash
+# Check current NuGet sources
+dotnet nuget list source
+
+# Add official NuGet source if missing
 dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+
+# Retry restore
 dotnet restore
 ```
 
