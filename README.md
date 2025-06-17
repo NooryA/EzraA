@@ -42,6 +42,13 @@ cd Backend
 dotnet restore
 ```
 
+**⚠️ Troubleshooting**: If `dotnet restore` fails with NuGet source errors, try:
+
+```bash
+dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+dotnet restore
+```
+
 #### Configure Database (Optional)
 
 The application uses SQLite by default. The database file `tasks.db` will be created automatically in the Backend directory on first run.
