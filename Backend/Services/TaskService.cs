@@ -26,8 +26,7 @@ namespace TaskManagementApi.Services
                 Title = t.Title,
                 Description = t.Description,
                 IsCompleted = t.IsCompleted,
-                CreatedAt = FormatDate(t.CreatedAt),
-                UpdatedAt = FormatDate(t.UpdatedAt)
+                CreatedAt = FormatDate(t.CreatedAt)
             });
         }
 
@@ -40,8 +39,7 @@ namespace TaskManagementApi.Services
                 Title = createTaskDTO.Title.Trim(),
                 Description = createTaskDTO.Description.Trim(),
                 IsCompleted = false,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                CreatedAt = DateTime.UtcNow
             };
 
             _context.Tasks.Add(task);
@@ -53,8 +51,7 @@ namespace TaskManagementApi.Services
                 Title = task.Title,
                 Description = task.Description,
                 IsCompleted = task.IsCompleted,
-                CreatedAt = FormatDate(task.CreatedAt),
-                UpdatedAt = FormatDate(task.UpdatedAt)
+                CreatedAt = FormatDate(task.CreatedAt)
             };
         }
 
@@ -79,7 +76,6 @@ namespace TaskManagementApi.Services
                 return null;
 
             task.IsCompleted = !task.IsCompleted;
-            task.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();
 

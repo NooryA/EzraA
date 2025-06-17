@@ -7,6 +7,5 @@ namespace TaskManagementApi.DTOs
         public string Description { get; set; } = string.Empty;
         public bool IsCompleted { get; set; }
         public string CreatedAt { get; set; } = string.Empty;
-        public string UpdatedAt { get; set; } = string.Empty;
     }
 } 

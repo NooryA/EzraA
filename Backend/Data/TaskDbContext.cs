@@ -23,7 +23,6 @@ namespace TaskManagementApi.Data
                 entity.Property(e => e.Description).HasMaxLength(1000);
                 entity.Property(e => e.IsCompleted).HasDefaultValue(false);
                 entity.Property(e => e.CreatedAt).HasDefaultValueSql("datetime('now')");
-                entity.Property(e => e.UpdatedAt).HasDefaultValueSql("datetime('now')");
             });
 
         }

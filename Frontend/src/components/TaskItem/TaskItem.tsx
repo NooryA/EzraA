@@ -54,21 +54,35 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onTaskUpdated, onTaskDeleted 
   }, []);
 
   return (
-    <div className={`${styles.taskItem} ${task.isCompleted ? styles.completed : styles.pending}`}>
-      <div className={styles.taskHeader}>
+    <div className={`${styles.taskItem} ${task.isCompleted ? styles.completed : styles.pending}`} style={{ cursor: "default" }}>
+      <div className={styles.taskHeader} style={{ cursor: "default" }}>
         <div
           className={`${styles.taskCheckbox} ${isToggling ? styles.toggling : task.isCompleted ? styles.checked : styles.unchecked}`}
           onClick={handleToggle}
           role="button"
           tabIndex={0}
           aria-label={task.isCompleted ? "Mark as incomplete" : "Mark as complete"}
+          style={{ cursor: "pointer" }}
         />
 
-        <div className={styles.taskContent} onClick={handleToggle}>
-          <h3 className={`${styles.taskTitle} ${task.isCompleted ? styles.completed : styles.pending}`}>{task.title}</h3>
+        <div className={styles.taskContent} style={{ cursor: "default" }}>
+          <h3
+            className={`${styles.taskTitle} ${task.isCompleted ? styles.completed : styles.pending}`}
+            onClick={handleToggle}
+            role="button"
+            tabIndex={0}
+            style={{ cursor: "pointer" }}
+          >
+            {task.title}
+          </h3>
 
           {task.description && (
-            <p className={`${styles.taskDescription} ${task.isCompleted ? styles.completed : styles.pending}`}>{task.description}</p>
+            <p
+              className={`${styles.taskDescription} ${task.isCompleted ? styles.completed : styles.pending}`}
+              style={{ cursor: "default" }}
+            >
+              {task.description}
+            </p>
           )}
         </div>
       </div>
@@ -76,7 +90,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onTaskUpdated, onTaskDeleted 
       <div className={styles.taskMeta}>
         <div className={styles.taskDates}>
           <span className={styles.taskDate}>Created: {task.createdAt}</span>
-          {task.updatedAt !== task.createdAt && <span className={styles.taskDate}>Updated: {task.updatedAt}</span>}
         </div>
 
         <button className={styles.deleteButton} onClick={handleDeleteClick} aria-label={`Delete task: ${task.title}`}>
