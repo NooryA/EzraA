@@ -162,3 +162,20 @@ File: `Backend/appsettings.Development.json`
   }
 }
 ```
+
+## 📋 Development Assumptions & Design Decisions
+
+### Key Assumptions Made
+
+#### 2. **Local Development Focus**
+
+- **Assumption**: Primary use case is local development and testing
+- **Impact**: SQLite database, simple CORS configuration, HTTP endpoints
+- **Alternative**: Production deployment would need PostgreSQL/SQL Server, proper CORS policies, HTTPS enforcement
+
+### What Was Intentionally Left Out
+
+#### Performance Optimizations
+
+- **Pagination**: All tasks loaded at once
+- **Caching**: No client-side or server-side caching
