@@ -1,0 +1,137 @@
+.taskList {
+  margin-top: 20px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.statsContainer {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.statsContainer h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    gap: 15px;
+  }
+}
+
+.statItem strong {
+  font-size: 1.1rem;
+}
+
+.statItem span {
+  color: #666;
+  margin-left: 5px;
+}
+
+.statItem.total strong {
+  color: #667eea;
+}
+
+.statItem.completed strong {
+  color: #2ecc71;
+}
+
+.statItem.pending strong {
+  color: #f39c12;
+}
+
+.statItem.percentage strong {
+  color: #9b59b6;
+}
+
+.taskControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .taskControls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .controlGroup {
+    justify-content: space-between;
+  }
+}
+
+.label {
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.select {
+  padding: 8px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #495057;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.emptyState h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.taskCount {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
